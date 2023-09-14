@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipeapp</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <form id="Add-Recipe-form">
+    <label for="name">Recipe-Title</label><br>
+    <input type="text" class="recipe-name" id="name" name="name" placeholder="Enter Recipe Name" required><br>
+    <label for="time">Preparation-Time</label><br>
+    <input type="time" class="preparation-time" id="time" name="time" placeholder="Enter Preparation Time" required><br>
+    <label for="steps">Preparation-Steps</label><br>
+    <textarea  class="preparation-steps" id="steps" name="steps" placeholder="Enter Preparation steps" required></textarea><br>
+    <label for="url">Image-Url</label><br>
+    <input type="url" class="url" id="url" name="url" placeholder="Enter the image url" required><br>  
+    <input type="submit" value="Add-Recipe" class="add-recipe-btn"><br>
+  </form>  
+<div id="total-div"> 
+    <h1 >My Recipes</h1>
+    <div id="showtotal"></div>
+</div>
+ 
+<div id="app"></div>
+<script src="script.js"></script>
+</body>
+</html>

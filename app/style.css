@@ -1,0 +1,152 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,300&display=swap');
+body{
+    font-family: 'Montserrat', sans-serif;
+    padding: 20px;
+    background-image: linear-gradient(to right, violet,pink);
+    border:5px solid black;
+    border-radius: 20px;
+  }
+
+h1{
+    width: 200px;
+    border-bottom: 5px double blue;
+    text-align: center;
+}
+#Add-Recipe-form{
+    margin: auto;
+    margin-bottom: 20px;
+    max-width: 500px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border:6px ridge rgb(230, 219, 162);
+    border-radius: 15px;
+    background-image: linear-gradient(to left,rgb(197, 38, 197),snow);
+    
+}
+
+#app{
+    margin: 20px;
+    padding: 25px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap:15px;
+    background-color: beige;
+    border:5px double gray;
+    border-radius: 15px;
+    
+}
+.divwrap{
+    margin: 10px;
+    padding: 20px;
+    display: flex;
+    justify-content:space-between;
+    text-align: center;
+    /* //width: 300px; */
+    
+    height:300px; 
+    border:2px solid salmon;
+    border-radius: 20px;
+}
+.rec-img{
+    width: 200px;
+    height: 200px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+#total-div{
+    display: flex;
+    justify-content: space-between;
+}
+.total-count-red{
+    padding-top:20px;
+    font-size: larger;
+    font-style: italic;
+    font-weight: bold;
+    height: 30px;
+    border-bottom: 5px double blue;
+    color:red;
+}
+.total-count-green{
+    padding-top:20px;
+    font-size: larger;
+    font-style: italic;
+    font-weight: bold;
+    height: 30px;
+    border-bottom: 5px double blue;
+    color:green;
+}
+.divtextup{
+    display: flex;
+    justify-content:space-between;
+}
+.divtext{
+    width:100%;
+    position: relative;
+}
+.btn-remove{
+    position: absolute;
+    bottom:20px;
+    right: 20px;
+    width:80px;
+    height:60px;
+    border: 2px solid brown;
+    border-radius: 5px;
+    font-size: larger;
+    font-style: oblique;
+            
+}
+.add-recipe-btn{
+    border: 2px solid rgb(102, 15, 102);
+    border-radius: 15px;
+    font-size: larger;
+    font-style: oblique;
+}
+#name{
+    border-radius: 5px;
+    border:5px groove;
+}
+#time{
+    border-radius: 5px;
+    border:5px groove;
+}
+#steps{
+    border-radius: 5px;
+    border:5px groove;
+}
+#url{
+    border-radius: 5px;
+    border:5px groove;
+}
+
+@media (max-width: 1050px) {
+    #app {
+      grid-template-columns: auto auto;
+    }
+  }
+  @media (max-width: 991px) {
+    #app {
+      grid-template-columns: auto;
+    }
+  }
+
+@media (max-width: 768px) {
+    #app {
+      grid-template-columns: auto ;
+    }
+  }
+  @media (max-width: 480px) {
+    #app {
+      grid-template-columns: auto;
+    }
+  }
+  @media (max-width: 320px) {
+    #app {
+      grid-template-columns: auto;
+    }
+  }
+
+
