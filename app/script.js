@@ -97,7 +97,7 @@ function hookform() {
     let time = document.querySelector("#time").value;
     let steps = document.querySelector("#steps").value;
     let url = document.querySelector("#url").value;
-
+    
     const recipe = {
       id: new Date().getTime(),
       title: name,
@@ -114,7 +114,8 @@ function hookform() {
 }
 function addRecipe(recipe) {
   recipes.push(recipe);
-
+  //sorthere
+  sorttime(recipe.time);
   updateUI();
   savetoLocal();
 }
@@ -150,16 +151,15 @@ function total() {
     // p.setAttribute("id", "totalp");
     //p.innerText = `Total Recipes : ${total}`;
     const totaldiv = document.querySelector("#showtotal");
-     totaldiv.setAttribute("class", "total-count-red");
+    totaldiv.setAttribute("class", "total-count-red");
     totaldiv.innerText = `Total Recipes : ${total}`;
   } else {
     const p = document.createElement("p");
     const totaldiv = document.querySelector("#showtotal");
-     totaldiv.setAttribute("class", "total-count-green");
+    totaldiv.setAttribute("class", "total-count-green");
     totaldiv.innerText = `Total Recipes : ${total}`;
   }
   //  refreshtotal();
- 
 }
 // function refreshtotal() {
 // const p = document.querySelector("#totalp");
@@ -169,13 +169,35 @@ function total() {
 
 function changetimeformat(timegn) {
   let timetochange = timegn.split(":");
+  //new Date().setHours(10, 14)
   let hr = timetochange[0];
   let min = timetochange[1];
-  newtime = `${hr}hours  ${min}minutes`;
+  let newtime='';
+  if (hr!=0) {
+    newtime += `${hr} hours`;
+    
+  } 
+  if(min!=0) {
+    newtime += `  ${min} minutes`;
+  }
   return newtime;
+}
+function sorttime() {
+
+  // let timetosort = recipeTime.split(":");
+  // let hr = timetochange[0];
+  // let min = timetochange[1];
+  //new Date(year,month,day,hours,minutes)
+  //const timecreated=new Date(2023,8,15,hr,min)
+  recipes.sort(function(a,b){
+    let atime = a['time'].split(":");
+    let btime = b['time'].split(":");
+    return new Date(2023,8,15,atime[0],atime[1])-new Date(2023,8,15,btime[0],btime[1])
+  })
+
+
 }
 
 getfromLocal();
 updateUI();
-
 hookform();
